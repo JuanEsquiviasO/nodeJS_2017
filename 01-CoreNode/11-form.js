@@ -30,4 +30,4 @@ function webServer(req, res) {
 	}
 }
 
-http.listen( 3000, 'localhost', () => console.log('Servidor corriendo en http://localhost:3000/') );
+http.listen( 3000, 'localhost', () => console.log('Server running on http://localhost:3000/') );
