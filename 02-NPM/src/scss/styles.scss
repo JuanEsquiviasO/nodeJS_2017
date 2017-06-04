@@ -1,0 +1,25 @@
+$font-main: sans-serif;
+$font-base: 16px;
+$blue-dark: #1F3E79;
+$blue-light: #2291D0;
+$red: red;
+
+html {
+	font-family:  $font-main;
+	font-size: $font-base;
+	background-color: #000;
+	color: #ffffff;
+}
+
+a {
+	color: $red;
+	font-weight: bold;
+}
+
+a:hover { color: $blue-light; }
+
+p {
+	padding: 1rem;
+	margin: 1rem;
+	font-size: 1.5rem;
+}

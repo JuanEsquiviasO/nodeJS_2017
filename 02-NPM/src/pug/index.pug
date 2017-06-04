@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width,initial-scale=1")
+		title= title
+		each css in files.CSS
+			link(rel="stylesheet", href=`../${css}`)
+	body
+		h1= title
+		a(href="http://www.macrossworld.com", target="_blank") Mechas
+		p Hi world, our testing task with scripts of NPM
+		each js in files.JS
+			script(src=`../${js}`)
