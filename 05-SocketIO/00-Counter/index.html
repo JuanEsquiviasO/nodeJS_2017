@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Connection counter with Socket.io</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<h1>Bidirectional communication with socket.io</h1>
+		<p id="hello"></p>
+		<p>
+			Number of active connections: <b id="conexions"></b>
+		</p>
+		<script src="./socket.io/socket.io.js"></script>
+		<script>
+			(function (d, io) {
+				'use strict';
+
+				var io = io();
+
+				io.on('hello', function (data) {
+					console.log(data);
+					d.querySelector('#hello').innerHTML = data.message;
+					io.emit('another method of my invention', {
+						name: 'Juan',
+						alias: '@juanesquiviaso'
+					});
+				});
+
+				io.on('connect users', function (data) {
+					console.log('Updating from the server. Now ' + data.numbers + ' active connections');
+					d.querySelector('#conexions').innerHTML = data.numbers;
+				});
+			})(document, io);
+		</script>
+	</body>
+</html>
